@@ -18,11 +18,15 @@ class App extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+        statusBarColor: Colors.white, // Color for Android
+        statusBarBrightness: Brightness.light // Dark == white status bar -- for IOS.
+    ));
     return MaterialApp(
         theme: appTheme(),
         scrollBehavior: CustomScrollBehavior(),
         debugShowCheckedModeBanner: false,
-        home: const Splash());
+        home: Splash());
   }
 
   ThemeData appTheme() {

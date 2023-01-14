@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:hair_time/ui/splash/SelectUserType.dart';
 import 'package:hair_time/utiils/CustomColors.dart';
 
 class Splash extends StatefulWidget {
@@ -35,8 +36,14 @@ class _Splash extends State<Splash> {
     );
   }
 
-  void goToHome() {
-    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const NavigationHome()));
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: Splash.SPLASH_DURATION_SECOND), () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SelectUserType()));
+    });
+
   }
 
   /**
