@@ -1,21 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hair_time/enum/SelectableTimeEnum.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
-import '../enum/SelectableDayEnum.dart';
-import '../utiils/CustomColors.dart';
-
-class SelectDayCard extends StatefulWidget {
-  final SelectableDayEnum item;
+class SelectTimeCard extends StatefulWidget {
+  final SelectableTimeEnum item;
   final bool isSelected;
-  final Function(SelectableDayEnum) callback;
+  final Function(SelectableTimeEnum) callback;
 
-  const SelectDayCard({Key? key, required this.item, required this.isSelected, required this.callback}) : super(key: key);
+  const SelectTimeCard({Key? key, required this.item, required this.isSelected, required this.callback}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _Card();
 }
 
-class _Card extends State<SelectDayCard> {
+class _Card extends State<SelectTimeCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

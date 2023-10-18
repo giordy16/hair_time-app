@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hair_time/utiils/CustomColors.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
 Widget BookingHistoryItem() {
   return GestureDetector(

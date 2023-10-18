@@ -15,16 +15,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp
     ]);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: Colors.white, // Color for Android
-        statusBarBrightness: Brightness.light // Dark == white status bar -- for IOS.
-    ));
+
     return MaterialApp(
         theme: appTheme(),
-        scrollBehavior: CustomScrollBehavior(),
         debugShowCheckedModeBanner: false,
         home: Splash());
   }
@@ -33,13 +28,5 @@ class App extends StatelessWidget {
     return ThemeData(
       fontFamily: GoogleFonts.raleway().fontFamily,
     );
-  }
-}
-
-class CustomScrollBehavior extends MaterialScrollBehavior {
-
-  @override
-  Widget buildOverscrollIndicator(BuildContext context, Widget child, ScrollableDetails details) {
-    return child;
   }
 }

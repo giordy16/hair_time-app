@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hair_time/widget/ShopListItem.dart';
-import 'package:hair_time/widget/header/SimpleHeader.dart';
+import 'package:hair_time/ui/common/ShopListItem.dart';
+import '../../../network/model/ShopModel.dart';
+import '../../common/header/SimpleHeader.dart';
 
 class ShopList extends StatefulWidget {
   @override
@@ -11,8 +12,9 @@ class _ShopList extends State<ShopList> with AutomaticKeepAliveClientMixin<ShopL
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
+        body: SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           SimpleHeader(context, false),
           Expanded(
@@ -32,9 +34,12 @@ class _ShopList extends State<ShopList> with AutomaticKeepAliveClientMixin<ShopL
                           padding: EdgeInsets.only(top: 16),
                           child: Column(
                             children: [
-                              ShopListItem(),
-                              ShopListItem(),
-                              ShopListItem(),
+                              ShopListItem(context, ShopModel.getTestModel()),
+                              ShopListItem(context, ShopModel.getTestModel()),
+                              ShopListItem(context, ShopModel.getTestModel()),
+                              ShopListItem(context, ShopModel.getTestModel()),
+                              ShopListItem(context, ShopModel.getTestModel()),
+                              ShopListItem(context, ShopModel.getTestModel()),
                             ],
                           ))
                     ],
@@ -43,7 +48,7 @@ class _ShopList extends State<ShopList> with AutomaticKeepAliveClientMixin<ShopL
           )
         ],
       ),
-    );
+    ));
   }
 
   @override

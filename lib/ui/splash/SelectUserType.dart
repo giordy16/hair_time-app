@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:hair_time/widget/header/MainHeader.dart';
-import 'package:hair_time/widget/header/SimpleHeader.dart';
-
-import '../../utiils/Style.dart';
-import '../../widget/SelectUserCard.dart';
-import '../client/navigator/NavigatorHomeClient.dart';
+import 'package:hair_time/ui/client/navigator/NavigatorHomeClient.dart';
+import 'package:hair_time/ui/common/header/SimpleHeader.dart';
+import 'package:hair_time/utils/Style.dart';
+import 'package:hair_time/ui/common/SelectUserCard.dart';
 
 class SelectUserType extends StatefulWidget {
   const SelectUserType({Key? key}) : super(key: key);
@@ -15,15 +12,14 @@ class SelectUserType extends StatefulWidget {
 }
 
 class _SelectUserType extends State<SelectUserType> {
-  final storage = FlutterSecureStorage();
-
   String selectedCardTitle = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
+      body: SafeArea(
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           SimpleHeader(context, false),
           Expanded(
@@ -61,7 +57,7 @@ class _SelectUserType extends State<SelectUserType> {
             ),
           ),
         ],
-      ),
+      )),
     );
   }
 

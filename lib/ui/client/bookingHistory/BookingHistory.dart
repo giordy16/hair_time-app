@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hair_time/widget/BookingHistoryItem.dart';
-import 'package:hair_time/widget/header/SimpleHeader.dart';
+import 'package:hair_time/ui/common/BookingHistoryItem.dart';
 
-import '../../../widget/header/MainHeader.dart';
+import '../../common/header/SimpleHeader.dart';
 
 class BookingHistory extends StatefulWidget {
   @override
@@ -13,41 +12,43 @@ class _BookingHistory extends State<BookingHistory> with AutomaticKeepAliveClien
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          SimpleHeader(context, false),
-          Expanded(
-            child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(top: 16),
-                        child: Text(
-                          'Elenco delle tue prenotazioni',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                      Padding(
+      body: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            SimpleHeader(context, false),
+            Expanded(
+              child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Padding(
                           padding: EdgeInsets.only(top: 16),
-                          child: Column(
-                            children: [
-                              BookingHistoryItem(),
-                              BookingHistoryItem(),
-                              BookingHistoryItem(),
-                              BookingHistoryItem(),
-                              BookingHistoryItem(),
-                              BookingHistoryItem(),
-                            ],
-                          ))
-                    ],
-                  ),
-                )),
-          )
-        ],
+                          child: Text(
+                            'Elenco delle tue prenotazioni',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                        Padding(
+                            padding: EdgeInsets.only(top: 16),
+                            child: Column(
+                              children: [
+                                BookingHistoryItem(),
+                                BookingHistoryItem(),
+                                BookingHistoryItem(),
+                                BookingHistoryItem(),
+                                BookingHistoryItem(),
+                                BookingHistoryItem(),
+                              ],
+                            ))
+                      ],
+                    ),
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }

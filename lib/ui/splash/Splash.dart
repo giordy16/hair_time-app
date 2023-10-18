@@ -1,9 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hair_time/ui/splash/SelectUserType.dart';
-import 'package:hair_time/utiils/CustomColors.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -15,8 +12,6 @@ class Splash extends StatefulWidget {
 }
 
 class _Splash extends State<Splash> {
-  final storage = FlutterSecureStorage();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,16 +39,5 @@ class _Splash extends State<Splash> {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SelectUserType()));
     });
 
-  }
-
-  /**
-   *
-   *  Dato che FlutterSecureStorage salva la informazioni sulla keyChain,
-   *  anche se l'app viene disinstallata le informazioni rimangono salvate sul telefono,
-   *  quindi al primo avvio dell'app è meglio eliminarle
-   *
-   */
-  void clearKeyChain() {
-    storage.deleteAll();
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../utiils/CustomColors.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
 Widget MainHeader() {
   return Container(

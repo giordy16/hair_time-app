@@ -1,17 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:hair_time/utiils/Constants.dart';
-import 'package:hair_time/utiils/CustomColors.dart';
+import 'package:hair_time/network/model/ShopModel.dart';
+import 'package:hair_time/ui/client/shop/ShopDetail.dart';
+import 'package:hair_time/utils/Constants.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
 Widget ShopListItem(
-    // String image,
-    // String name,
-    // String address,
-    // String phone
+    BuildContext context,
+    ShopModel shopModel
     ) {
   return GestureDetector(
     onTap: (){
-
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ShopDetail(shopModel)));
     },
     child: Card(
         margin: EdgeInsets.only(bottom: 16),
@@ -37,16 +37,16 @@ Widget ShopListItem(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
-                        'BARBIERE DA GIGI',
+                        shopModel.name,
                         style: TextStyle(color: CustomColors.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      Text('Via Roma 4, Treviso (TV)'),
+                      Text(shopModel.address),
                       SizedBox(
                         height: 4,
                       ),
-                      Text('0422400600'),
+                      Text(shopModel.phone),
                       SizedBox(
                         height: 4,
                       ),

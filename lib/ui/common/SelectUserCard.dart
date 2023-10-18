@@ -1,30 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
-import '../enum/SelectableTimeEnum.dart';
-import '../enum/SelectableTimeEnum.dart';
-import '../utiils/CustomColors.dart';
-
-class SelectTimeCard extends StatefulWidget {
-  final SelectableTimeEnum item;
+class SelectUserCard extends StatefulWidget {
+  final String title;
+  final String message;
   final bool isSelected;
-  final Function(SelectableTimeEnum) callback;
+  final Function(String) callback;
 
-  const SelectTimeCard({Key? key, required this.item, required this.isSelected, required this.callback}) : super(key: key);
+  const SelectUserCard({Key? key, required this.title, required this.message, required this.isSelected, required this.callback}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _Card();
 }
 
-class _Card extends State<SelectTimeCard> {
+class _Card extends State<SelectUserCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.callback(widget.item);
+        widget.callback(widget.title);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        margin: const EdgeInsets.fromLTRB(16, 8, 16, 8),
         width: double.infinity,
         decoration: BoxDecoration(
             boxShadow: [
@@ -43,7 +41,11 @@ class _Card extends State<SelectTimeCard> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.item.value, style: TextStyle(color: CustomColors.primaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
+              Text(widget.title, style: TextStyle(color: CustomColors.primaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 16,
+              ),
+              Text(widget.message),
             ],
           ),
         ),

@@ -1,8 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:hair_time/utiils/CustomColors.dart';
+import 'package:hair_time/utils/CustomColors.dart';
 
 import '../bookingHistory/BookingHistory.dart';
-import '../shopList/ShopList.dart';
+import '../home/ShopList.dart';
 
 class NavigatorHomeClient extends StatefulWidget {
   @override
@@ -20,13 +22,13 @@ class _Navigator extends State<NavigatorHomeClient> {
   }
 
   Widget buildBottomBar() {
-
     EdgeInsets padding = MediaQuery.of(context).viewPadding;
 
     double bPadding = 0.0;
-    if(padding.bottom == 0) bPadding = 8.0;
+    if (padding.bottom == 0 || Platform.isIOS) bPadding = 8.0;
 
-    return Container(
+    return SafeArea(
+        child: Container(
       padding: EdgeInsets.fromLTRB(0, 8, 0, bPadding),
       decoration: BoxDecoration(color: CustomColors.primaryColor),
       child: Row(
@@ -35,7 +37,7 @@ class _Navigator extends State<NavigatorHomeClient> {
           GestureDetector(
             onTap: () {
               pageIndex = 0;
-              setState((){});
+              setState(() {});
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -56,8 +58,8 @@ class _Navigator extends State<NavigatorHomeClient> {
           GestureDetector(
               onTap: () {
                 pageIndex = 1;
-                setState((){});
-                },
+                setState(() {});
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -72,10 +74,10 @@ class _Navigator extends State<NavigatorHomeClient> {
               ))
         ],
       ),
-    );
+    ));
   }
 
-  Widget whiteDot(int index){
+  Widget whiteDot(int index) {
     return Container(
       width: 4,
       height: 4,
@@ -87,5 +89,4 @@ class _Navigator extends State<NavigatorHomeClient> {
       ),
     );
   }
-
 }

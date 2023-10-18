@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hair_time/enum/SelectableTimeEnum.dart';
-import 'package:hair_time/utiils/CustomColors.dart';
-import 'package:hair_time/widget/header/SimpleHeader.dart';
-
-import '../../../utiils/Style.dart';
-import '../../../widget/SelectTimeCard.dart';
+import '../../../utils/CustomColors.dart';
+import '../../../utils/Style.dart';
+import '../../common/SelectTimeCard.dart';
+import '../../common/header/SimpleHeader.dart';
 
 class StateTime extends StatefulWidget {
   @override
@@ -62,7 +61,7 @@ class _StateTime extends State<StateTime> {
                     margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
                     child: TextField(
                       decoration: InputDecoration(
-                          contentPadding: EdgeInsets.fromLTRB(16, 70, 16, 0),
+                          contentPadding: EdgeInsets.fromLTRB(16, 40, 16, 0),
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
                           fillColor: Colors.white,
                           hintText: "Note (opzionale)",

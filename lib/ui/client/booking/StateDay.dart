@@ -2,12 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:hair_time/enum/SelectableDayEnum.dart';
-import 'package:hair_time/utiils/CustomColors.dart';
-import 'package:hair_time/widget/SelectDayCard.dart';
-import 'package:hair_time/widget/dialog/GeneralDialogeSingleBtn.dart';
+import 'package:hair_time/ui/common/dialog/GeneralDialogeSingleBtn.dart';
+import 'package:hair_time/ui/common/header/SimpleHeader.dart';
+import 'package:hair_time/utils/CustomColors.dart';
+import 'package:hair_time/utils/Style.dart';
 
-import '../../../utiils/Style.dart';
-import '../../../widget/header/SimpleHeader.dart';
+import '../../common/SelectDayCard.dart';
 import 'StateTime.dart';
 
 class StateDay extends StatefulWidget {
@@ -47,19 +47,19 @@ class _StateDate extends State<StateDay> {
                         padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
                         child: Container(
                             width: double.infinity,
-                            child: Text(
+                            child: const Text(
                               'Prenota il tuo appuntamento',
                               style: TextStyle(fontSize: 24, color: CustomColors.primaryColor, fontWeight: FontWeight.bold),
                             )),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
                         child: Text(
                           'Quando?',
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.fromLTRB(16, 4, 16, 0),
                         child: Text(
                           'Seleziona quando vorresti avere il tuo appuntamento.\nSuccessivamente potrai selezionare la fascia oraria.',
