@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hair_time/ui/common/BookingHistoryItem.dart';
 
-import '../../common/header/SimpleHeader.dart';
+import '../../common/header/simple_header.dart';
 
 class BookingHistory extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _BookingHistory extends State<BookingHistory> with AutomaticKeepAliveClien
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            SimpleHeader(context, false),
+            SimpleHeader(showBack: false),
             Expanded(
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),

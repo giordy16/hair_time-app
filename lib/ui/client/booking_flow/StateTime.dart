@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hair_time/enum/SelectableTimeEnum.dart';
-import '../../../utils/CustomColors.dart';
-import '../../../utils/Style.dart';
+import '../../../utils/custom_colors.dart';
+import '../../../utils/styles/button_styles.dart';
 import '../../common/SelectTimeCard.dart';
-import '../../common/header/SimpleHeader.dart';
+import '../../common/header/simple_header.dart';
 
 class StateTime extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _StateTime extends State<StateTime> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SimpleHeader(context, true),
+            SimpleHeader(),
             Expanded(
                 child: SingleChildScrollView(
               child: Column(
@@ -76,7 +76,7 @@ class _StateTime extends State<StateTime> {
                       child: Container(
                         width: double.infinity,
                         child: ElevatedButton(
-                          style: BlueBtnWithLogic(selectedTime != null),
+                          style: BlueBtn(selectedTime != null),
                           onPressed: () {
                             if (selectedTime != null) {
                               // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SelectTime()));

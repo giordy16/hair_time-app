@@ -1,0 +1,3 @@
+enum UserTypeEnum {
+  SHOP, CLIENT
+}

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'CustomColors.dart';
+import '../custom_colors.dart';
 
 ButtonStyle RoundedCustomColorButton(Color color) {
   return ButtonStyle(
@@ -11,7 +11,7 @@ ButtonStyle RoundedCustomColorButton(Color color) {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0), side: BorderSide(color: CustomColors.primaryColor))));
 }
 
-ButtonStyle BlueBtnWithLogic(bool enabled) {
+ButtonStyle BlueBtn(bool enabled) {
   return ButtonStyle(
       padding: MaterialStateProperty.all(const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),

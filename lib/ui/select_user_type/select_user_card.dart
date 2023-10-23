@@ -1,25 +1,28 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hair_time/utils/CustomColors.dart';
+import 'package:hair_time/ui/select_user_type/select_user_type_enum.dart';
+import 'package:hair_time/utils/custom_colors.dart';
 
-class SelectUserCard extends StatefulWidget {
-  final String title;
-  final String message;
+class SelectUserCard extends StatelessWidget {
+  final UserTypeEnum type;
   final bool isSelected;
-  final Function(String) callback;
+  final Function(UserTypeEnum) callback;
 
-  const SelectUserCard({Key? key, required this.title, required this.message, required this.isSelected, required this.callback}) : super(key: key);
+  const SelectUserCard({
+    Key? key,
+    required this.type,
+    required this.isSelected,
+    required this.callback,
+  }) : super(key: key);
 
-  @override
-  State<StatefulWidget> createState() => _Card();
-}
-
-class _Card extends State<SelectUserCard> {
   @override
   Widget build(BuildContext context) {
+
+    String title = type == UserTypeEnum.CLIENT ? "CLIENTE" : "ESERCENTE";
+    String message = type == UserTypeEnum.CLIENT ? "Vuoi trovare il parrucchiere/barbiere più vicino a te e prenotare con pochi click" : "Sei un parrucchiere/barbiere e vuoi semplificare le prenotazioni per la tua attività";
+
     return GestureDetector(
       onTap: () {
-        widget.callback(widget.title);
+        callback(type);
       },
       child: Container(
         margin: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -34,18 +37,18 @@ class _Card extends State<SelectUserCard> {
               ),
             ],
             color: CustomColors.backgroundLightGray,
-            border: Border.all(color: CustomColors.primaryColor, width: 3, style: widget.isSelected ? BorderStyle.solid : BorderStyle.none),
+            border: Border.all(color: CustomColors.primaryColor, width: 3, style: isSelected ? BorderStyle.solid : BorderStyle.none),
             borderRadius: BorderRadius.all(Radius.circular(25.0))),
         child: Padding(
           padding: EdgeInsets.all(32),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.title, style: TextStyle(color: CustomColors.primaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
+              Text(title, style: TextStyle(color: CustomColors.primaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(
                 height: 16,
               ),
-              Text(widget.message),
+              Text(message),
             ],
           ),
         ),

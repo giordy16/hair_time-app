@@ -1,21 +1,22 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:hair_time/enum/SelectableDayEnum.dart';
 import 'package:hair_time/ui/common/dialog/GeneralDialogeSingleBtn.dart';
-import 'package:hair_time/ui/common/header/SimpleHeader.dart';
-import 'package:hair_time/utils/CustomColors.dart';
-import 'package:hair_time/utils/Style.dart';
+import 'package:hair_time/ui/common/header/simple_header.dart';
+import 'package:hair_time/utils/custom_colors.dart';
+import 'package:hair_time/utils/styles/button_styles.dart';
 
 import '../../common/SelectDayCard.dart';
 import 'StateTime.dart';
 
-class StateDay extends StatefulWidget {
+class BookingStepOneDay extends StatefulWidget {
+
+  static const ROUTE = "/bookingStepOne";
+
   @override
   State<StatefulWidget> createState() => _StateDate();
 }
 
-class _StateDate extends State<StateDay> {
+class _StateDate extends State<BookingStepOneDay> {
   SelectableDayEnum? selectedDate;
   DateTime? specificDate;
 
@@ -36,7 +37,7 @@ class _StateDate extends State<StateDay> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SimpleHeader(context, true),
+            SimpleHeader(),
             Expanded(
                 child: SingleChildScrollView(
                   child: Column(
@@ -79,7 +80,7 @@ class _StateDate extends State<StateDay> {
                           child: Container(
                             width: double.infinity,
                             child: ElevatedButton(
-                              style: BlueBtnWithLogic(selectedDate != null),
+                              style: BlueBtn(selectedDate != null),
                               onPressed: () {
                                 if (selectedDate != null) {
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => StateTime()));

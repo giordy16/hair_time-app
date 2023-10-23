@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hair_time/enum/SelectableDayEnum.dart';
-import 'package:hair_time/utils/CustomColors.dart';
+import 'package:hair_time/utils/custom_colors.dart';
 
 
 class SelectDayCard extends StatefulWidget {
