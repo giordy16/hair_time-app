@@ -19,7 +19,7 @@ class BlueButtonFullWidth extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+        padding: EdgeInsets.all(16),
         child: ElevatedButton(
           style: ButtonStyle(
               padding: MaterialStateProperty.all(const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),
@@ -30,7 +30,7 @@ class BlueButtonFullWidth extends StatelessWidget {
                 side: BorderSide(color: isEnabled ? CustomColors.primaryColor : CustomColors.backgroundLightGray),
               ))),
           onPressed: isEnabled ? onClick : null,
-          child: Text(text.toUpperCase()),
+          child: Text(text.toUpperCase(), style: const TextStyle(fontWeight: FontWeight.bold)),
         ),
       ),
     );

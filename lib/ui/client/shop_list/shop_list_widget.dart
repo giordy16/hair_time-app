@@ -1,10 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hair_time/network/model/ShopModel.dart';
 import 'package:hair_time/ui/client/shop/shop_detail_page.dart';
 import 'package:hair_time/utils/constants.dart';
 import 'package:hair_time/utils/custom_colors.dart';
+
+import '../../../models/network/shop/ShopModel.dart';
 
 class ShopListItem extends StatelessWidget {
 

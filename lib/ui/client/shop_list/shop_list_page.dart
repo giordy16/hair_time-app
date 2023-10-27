@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hair_time/ui/client/shop_list/shop_list_widget.dart';
 
-import '../../../network/model/ShopModel.dart';
+import '../../../models/network/shop/ShopModel.dart';
 import '../../common/header/simple_header.dart';
 
 class ShopList extends StatelessWidget {

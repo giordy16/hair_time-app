@@ -5,9 +5,10 @@ import 'package:hair_time/utils/styles/text_styles.dart';
 
 class SimpleHeader extends StatelessWidget {
 
-  bool showBack;
+  final showBack;
+  final onBackCallback;
 
-  SimpleHeader({this.showBack = true});
+  SimpleHeader({this.showBack = true, this.onBackCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,11 @@ class SimpleHeader extends StatelessWidget {
                   height: 50,
                 ),
                 onTap: () {
-                  context.pop();
+                  if (onBackCallback != null) {
+                    onBackCallback(context);
+                  } else {
+                    context.pop();
+                  }
                 },
               )),
         ],

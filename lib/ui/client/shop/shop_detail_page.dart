@@ -2,13 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hair_time/network/model/ShopModel.dart';
-import 'package:hair_time/ui/client/booking_flow/booking_step_1_day.dart';
+import 'package:hair_time/ui/client/booking_flow/booking_flow_page.dart';
 import 'package:hair_time/ui/common/buttons/blue_button_full_width.dart';
 import 'package:hair_time/ui/common/header/simple_header.dart';
 import 'package:hair_time/utils/constants.dart';
 import 'package:hair_time/utils/custom_colors.dart';
 import 'package:hair_time/utils/phone_helper.dart';
+
+import '../../../models/network/shop/ShopModel.dart';
 
 class ShopDetailPage extends StatelessWidget {
   static const ROUTE = "/shopDetail";
@@ -220,7 +221,7 @@ class ShopDetailPage extends StatelessWidget {
                 isEnabled: true,
                   text: 'Prenota un appuntamento',
                   onClick: () {
-                    context.push(BookingStepOneDay.ROUTE);
+                    context.push(BookingFlowPage.ROUTE);
                   })
             ],
           ),

@@ -18,7 +18,7 @@ class SelectUserType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => SelectUserTypeBloc(Idle(null)),
+      create: (_) => SelectUserTypeBloc(Idle()),
       child: Scaffold(
         body: BlocBuilder<SelectUserTypeBloc, SelectUserTypeState>(builder: (context, state) {
           state as Idle;

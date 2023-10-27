@@ -5,5 +5,5 @@ abstract class SelectUserTypeState {}
 class Idle extends SelectUserTypeState {
   final UserTypeEnum? selectedUserType;
 
-  Idle(this.selectedUserType);
+  Idle([this.selectedUserType]);
 }
