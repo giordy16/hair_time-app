@@ -9,8 +9,8 @@ class TimeSelectedEvent extends BookingFlowEvent {
 }
 
 class DaySelectedEvent extends BookingFlowEvent {
-  BookingDayModel daySelected;
-  String? customDate;
+  BookingDayModel? daySelected;
+  DateTime? customDate;
 
   DaySelectedEvent(this.daySelected, [this.customDate]);
 }
@@ -19,5 +19,10 @@ class PageChangeEvent extends BookingFlowEvent {
   int page;
 
   PageChangeEvent(this.page);
+}
 
+class ServiceSelectedEvent extends BookingFlowEvent {
+  BookingServiceModel serviceSelected;
+
+  ServiceSelectedEvent(this.serviceSelected);
 }

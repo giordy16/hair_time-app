@@ -19,7 +19,7 @@ class BlueButtonFullWidth extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: ElevatedButton(
           style: ButtonStyle(
               padding: MaterialStateProperty.all(const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)),

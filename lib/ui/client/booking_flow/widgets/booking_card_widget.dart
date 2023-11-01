@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hair_time/models/domain/BookingDataModel.dart';
-import 'package:hair_time/models/domain/BookingDayModel.dart';
+import 'package:hair_time/models/domain/client_booking/BookingDataModel.dart';
+import 'package:hair_time/models/domain/client_booking/BookingDayModel.dart';
 import 'package:hair_time/utils/custom_colors.dart';
 
 class BookingCardWidget extends StatelessWidget {

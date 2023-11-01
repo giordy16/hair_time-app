@@ -6,6 +6,7 @@ import 'package:hair_time/ui/client/home/home_client_page.dart';
 import 'package:hair_time/ui/client/shop/shop_detail_page.dart';
 import 'package:hair_time/ui/client/shop_list/shop_list_page.dart';
 import 'package:hair_time/ui/select_user_type/select_user_type_page.dart';
+import 'package:hair_time/ui/shop/registration/shop_registration_page.dart';
 import 'package:hair_time/ui/splash/splash_page.dart';
 
 import '../models/network/shop/ShopModel.dart';
@@ -62,6 +63,11 @@ final app_routes = GoRouter(
       parentNavigatorKey: _rootNavigatorKey,
       path: BookingFlowPage.ROUTE,
       builder: (context, state) => BookingFlowPage(),
+    ),
+    GoRoute(
+      parentNavigatorKey: _rootNavigatorKey,
+      path: ShopRegistrationPage.ROUTE,
+      builder: (context, state) => ShopRegistrationPage(),
     ),
   ],
 );

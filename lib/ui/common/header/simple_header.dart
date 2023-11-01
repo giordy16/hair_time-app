@@ -13,7 +13,7 @@ class SimpleHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(16, 0, 8, 0),
+      padding: EdgeInsets.fromLTRB(16, 0, 8, 8),
       child: Stack(
         children: [
           Container(

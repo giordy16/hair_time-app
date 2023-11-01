@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hair_time/ui/client/home/home_client_page.dart';
 import 'package:hair_time/ui/common/header/simple_header.dart';
 import 'package:hair_time/ui/select_user_type/bloc/select_user_type_bloc.dart';
 import 'package:hair_time/ui/select_user_type/select_user_card.dart';
 import 'package:hair_time/ui/select_user_type/select_user_type_enum.dart';
+import 'package:hair_time/ui/shop/registration/bloc/shop_registration_state.dart';
+import 'package:hair_time/ui/shop/registration/shop_registration_page.dart';
 import 'package:hair_time/utils/styles/button_styles.dart';
 
 import '../client/shop_list/shop_list_page.dart';
@@ -54,7 +55,9 @@ class SelectUserType extends StatelessWidget {
                   child: ElevatedButton(
                     style: BlueBtn(false),
                     onPressed: () {
-                      context.go(ShopList.ROUTE);
+                      state.selectedUserType == UserTypeEnum.CLIENT ?
+                      context.go(ShopList.ROUTE) :
+                      context.go(ShopRegistrationPage.ROUTE);
                     },
                     child: Text('AVANTI'),
                   ),
