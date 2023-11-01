@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hair_time/utils/CustomColors.dart';
-import 'package:hair_time/utils/Style.dart';
+import 'package:hair_time/utils/custom_colors.dart';
+import 'package:hair_time/utils/styles/button_styles.dart';
 
 Widget GeneralDialogeSingleBtn(String title, String message, String btnText, VoidCallback btnCallback) {
   return Expanded(
