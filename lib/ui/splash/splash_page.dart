@@ -5,6 +5,8 @@ import 'package:hair_time/utils/custom_colors.dart';
 import 'package:hair_time/utils/dimemsions.dart';
 import 'package:hair_time/utils/styles/text_styles.dart';
 
+import '../../app/app_language.dart';
+
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
 
@@ -14,7 +16,8 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    startSplashCountdown(context);
+    _startSplashCountdown(context);
+    _initApp(context);
 
     return Scaffold(
       backgroundColor: CustomColors.primaryColor,
@@ -33,10 +36,15 @@ class SplashPage extends StatelessWidget {
     );
   }
 
-  void startSplashCountdown(BuildContext context) {
+  void _startSplashCountdown(BuildContext context) {
     Future.delayed(const Duration(seconds: SplashPage.SPLASH_DURATION_SECOND), () {
       context.go(SelectUserType.ROUTE);
     });
+  }
+
+
+  void _initApp(BuildContext context) {
+    languageCode = Localizations.localeOf(context).languageCode;
   }
 
 }

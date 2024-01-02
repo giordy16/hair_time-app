@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hair_time/app/app_language.dart';
+import 'package:hair_time/app/app_routes.dart';
 import 'package:hair_time/app_theme.dart';
-import 'package:hair_time/utils/app_routes.dart';
 
 class App extends StatelessWidget {
   final String flavor;
@@ -12,7 +13,6 @@ class App extends StatelessWidget {
     required this.flavor,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -20,10 +20,9 @@ class App extends StatelessWidget {
       title: 'Hair time',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      routerConfig: app_routes,
+      routerConfig: appRoutes,
       theme: theme,
       debugShowCheckedModeBanner: false,
     );
   }
-
 }

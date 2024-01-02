@@ -24,6 +24,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  dropdown_button2: ^2.3.9
+  dio: ^5.3.3
+  build_runner: ^2.4.6
 
 flutter_icons:
   image_path: "lib/assets/app_icon_bg.png"
@@ -38,6 +41,7 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  json_serializable: ^6.7.1
 
 flutter:
   generate: true

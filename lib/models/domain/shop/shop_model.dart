@@ -1,14 +1,14 @@
-import 'package:hair_time/models/domain/shop/shop_address.dart';
+import 'package:hair_time/models/domain/LatLng.dart';
 
 class ShopModel {
-  final String name;
-  final ShopAddress address;
-  final String phone;
+  final String? name;
+  final ShopAddress? address;
+  final String? phone;
 
   ShopModel({
-    required this.name,
-    required this.address,
-    required this.phone,
+    this.name,
+    this.address,
+    this.phone,
   });
 
   ShopModel copyWith({
@@ -22,12 +22,20 @@ class ShopModel {
       phone: phone ?? this.phone,
     );
   }
+}
 
-  static ShopModel empty() {
-    return ShopModel(
-      name: "",
-      phone: "",
-      address: ShopAddress("", "", "", ""),
-    );
-  }
+class ShopAddress {
+  final String? address;
+  final LatLng? coordinates;
+  final String? country;
+  final String? province;
+  final String? zipCode;
+
+  ShopAddress({
+    this.address,
+    this.coordinates,
+    this.country,
+    this.province,
+    this.zipCode,
+  });
 }

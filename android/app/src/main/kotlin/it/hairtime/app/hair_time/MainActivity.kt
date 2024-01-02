@@ -1,4 +1,4 @@
-package it.hairtime.app.hair_time
+package it.hairtime.app
 
 import io.flutter.embedding.android.FlutterActivity
 

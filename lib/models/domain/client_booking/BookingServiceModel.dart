@@ -1,5 +1,5 @@
 import 'package:hair_time/models/domain/client_booking/BookingDataModel.dart';
-import 'package:hair_time/ui/client/booking_flow/enum/sex_enum.dart';
+import 'package:hair_time/ui/b2c/booking_flow/enum/sex_enum.dart';
 
 class BookingServiceModel extends BookingDataModel {
 
